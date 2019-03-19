@@ -2,6 +2,7 @@ import discord
 import asyncio
 import random
 import datetime
+import os
 
 
 client = discord.Client()
@@ -103,4 +104,5 @@ async def on_message(message):
         if message.content.startswith('!대현아 네이버'):
             await client.send_message(message.channel, "https://www.naver.com/")
 
-client.run('NTU2ODAwOTQ5MDEyNzkxMzA2.D3D_mg.jQEl93u20FCpsm2wqNghEh_XqRo')
+access_token = os.environ["BOT TOKEN"]
+client.run(access_token)
